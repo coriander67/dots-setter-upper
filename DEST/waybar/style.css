@@ -1,0 +1,85 @@
+@define-color accent #afa193;
+@define-color fg #f6f1ea;
+@define-color bg #101010;
+@define-color bg-alt #252525;
+@define-color hover rgba(175, 161, 147, 0.4);
+@define-color module-bg rgba(16,16,16,0.7);
+
+* {
+    font-size: 15px;
+    min-height: 0;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Kill GTK button styling globally (prevents white flash) */
+button {
+    background: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+button:hover,
+button:focus,
+button:active {
+    background: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#mode {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    color: @accent;
+}
+
+/* Unified module styling */
+#workspaces button,
+#language,
+#pulseaudio,
+#battery,
+
+#custom-gammastep,
+
+#custom-clock {
+    font-family: "JetBrainsMono Nerd Font";
+    color: @fg;
+    background-color: @module-bg;
+    border-radius: 15px;
+    padding: 7px 14px;
+    margin: 4px 6px;
+}
+
+/* Hover effect */
+#workspaces button:hover,
+#pulseaudio:hover,
+#custom-gammastep:hover,
+#language:hover,
+#battery:hover {
+    background-color: @hover;
+    color: @fg;
+}
+
+/* Active workspace */
+#workspaces button.active,
+#workspaces button.focused {
+    background-color: @accent;
+    color: @bg;
+}
+
+#tray {
+    font-family: "Ubuntu";
+    color: @fg;
+    background-color: @module-bg;
+    border-radius: 15px;
+    margin: 4px 6px;
+    padding-right: 5px;
+    padding-left: 5px;
+}

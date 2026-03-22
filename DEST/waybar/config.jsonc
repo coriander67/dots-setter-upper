@@ -1,0 +1,45 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 10,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [],
+    "modules-right": ["pulseaudio", "custom/gammastep", "custom/clock", "tray"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "format": "{icon}{name}",
+        "format-icons": {
+            "default": "",
+            "urgent": "!",
+            "focused": "*"
+        }
+    },
+    
+    "pulseaudio": {
+        "format": "<span color='#afa193'><b>vol:</b></span> {volume}%",
+        "format-muted": "<span color='#afa193'><b>vol:</b></span> {volume}% (m)"
+    },
+
+    "custom/gammastep": {
+        "format": "{text}",
+        "exec": "/home/pl/.config/waybar/gamma.sh",
+        "return-type": "json",
+        "interval": 0.2,
+        "on-click": "/home/pl/.config/waybar/gamma.sh 2",
+        "on-click-right": "/home/pl/.config/waybar/gamma.sh 1"
+    },
+    
+    "custom/clock": {
+        "format": "<span color='#252525'></span>{text}<span color='#252525'></span>",
+        "exec": "date +'%I:%M%p  %A, %b %d' | awk '{print tolower($0)}'",
+        "interval": 3
+    },
+    
+    "tray": {
+        "icon-size": 20,
+        "spacing": 5,
+        "tooltip": false
+    }
+}
